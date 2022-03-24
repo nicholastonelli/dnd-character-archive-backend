@@ -1,0 +1,122 @@
+[
+    {
+        "name":"Roland Black",
+        "class": "ranger",
+        "subclass": "hunter",
+        "level": 10,
+        "background": "noble",
+        "race": "half-elf",
+        "alignment": "neutral good",
+        "experiencePoints": 64000,
+        "statistics": {
+            "str": 16,
+            "dex": 18,
+            "con": 14,
+            "int": 12,
+            "wis": 12,
+            "cha": 12
+        },
+        "savingThrows": {
+            "str": true,
+            "dex": true
+        },
+        "skills": {
+            "survival": {
+                "proficiency": true
+            }
+        },
+        "armorClass": {
+            "baseArmor": 18
+        },
+        "hitDice": {
+            "die": 10
+        },
+        "hitPoints":{
+            "max": 77,
+            "current": 77
+        },
+        "equipment": {
+            "currency": {
+                "gold": 163
+            }
+        },
+        "personality":{
+            "traits": "Dutiful but conflicted.",
+            "ideals": "To do what is right, even when unclear.",
+            "bonds": "The allies and friends he has made along the way.",
+            "flaws": "I am quick to anger and combat."
+        },
+
+        "characteristics": {
+            "age": 24,
+            "height": "6\"1'",
+            "weight": 185,
+            "eyes": "blue",
+            "skin": "pale",
+            "hair": "chestnut"
+        },
+        "characterAppearance": "A tall and broad kngiht in mottled green cloaks, strapped in arms about him.",
+        "characterBackstory": "A nobles son trained by a ranger who was sent to war."
+
+    },
+    {
+        "name":"Phearon Sage",
+        "class": "rogue",
+        "subclass": "assassin",
+        "level": 10,
+        "background": "Criminal",
+        "race": "human",
+        "alignment": "chaotic good",
+        "experiencePoints": 64000,
+        "statistics": {
+            "str": 14,
+            "dex": 18,
+            "con": 12,
+            "int": 16,
+            "wis": 10,
+            "cha": 14
+        },
+        "savingThrows": {
+            "int": true,
+            "dex": true
+        },
+        "skills": {
+            "stealth": {
+                "proficiency": true
+            }
+        },
+        "armorClass": {
+            "baseArmor": 16
+        },
+        "hitDice": {
+            "die": 8
+        },
+        "hitPoints":{
+            "max": 56,
+            "current": 56
+        },
+        "equipment": {
+            "currency": {
+                "gold": 533
+            }
+        },
+        "personality":{
+            "traits": "Dutiful but conflicted.",
+            "ideals": "To follow ones values.",
+            "bonds": "The allies and friends he has made along the way.",
+            "flaws": "I am a free spirited vagabond."
+        },
+
+        "characteristics": {
+            "age": 22,
+            "height": "5\"2'",
+            "weight": 135,
+            "eyes": "brown",
+            "skin": "dark",
+            "hair": "black"
+        },
+        "characterAppearance": "A short, darkly clad monk looking type, concealing a great array of wepaons",
+        "characterBackstory": "An assassin trianed for war."
+
+    }
+]
