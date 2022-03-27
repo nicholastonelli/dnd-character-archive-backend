@@ -4,6 +4,7 @@ const express = require("express")
 const app = express()
 const methodOverride = require("method-override")
 const cors = require("cors")
+const session = require('express-session')
 
 
 const characterController = require("./controllers/characters")
@@ -15,6 +16,14 @@ app.use(
     origin: process.env.FRONTEND_URL,
     methods: "GET,POST,PUT,DELETE",
     credentials: true,
+  })
+)
+
+app.use(
+  session({
+    secret: process.env.SECRET,
+    resave: false, 
+    saveUninitialized: false
   })
 )
 

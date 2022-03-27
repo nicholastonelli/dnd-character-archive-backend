@@ -11,7 +11,7 @@ const characterSchema = new mongoose.Schema(
     race: { type: String, required: true, default: "human" },
     alignment: { type: String, required: true, default: "true neutral" },
     experiencePoints: { type: Number, default: 0 },
-    statistics: {
+    abilities: {
       str: { type: Number, required: true },
       dex: { type: Number, required: true },
       con: { type: Number, required: true },

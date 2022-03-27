@@ -8,7 +8,7 @@
         "race": "half-elf",
         "alignment": "neutral good",
         "experiencePoints": 64000,
-        "statistics": {
+        "abilities": {
             "str": 16,
             "dex": 18,
             "con": 14,
@@ -68,7 +68,7 @@
         "race": "human",
         "alignment": "chaotic good",
         "experiencePoints": 64000,
-        "statistics": {
+        "abilities": {
             "str": 14,
             "dex": 18,
             "con": 12,

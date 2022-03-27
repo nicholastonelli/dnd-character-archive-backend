@@ -13,9 +13,6 @@ router.get("/", (req, res) => {
     }
     res.status(200).json(characters)
   })
-//   Characters.find({}, (err, characters) => {
-    
-//   })
 })
 
 //Create/Character Route

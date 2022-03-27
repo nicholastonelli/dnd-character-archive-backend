@@ -18,20 +18,7 @@ const userSchema = new mongoose.Schema({
     profilePicture: {
         type: String,
         default: "/image/icon_avatar.png",
-    },
-    googleId: String,
-    isAdmin: {
-        type: Boolean,
-        default: false,
-    },
-    followers: {
-        type: Array,
-        default: [],
-    },
-    followings: {
-        type: Array,
-        default: [],
-    },
+    }
 },
 { timestamps: true }
 )
