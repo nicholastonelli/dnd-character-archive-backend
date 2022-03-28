@@ -30,26 +30,32 @@ const characterSchema = new mongoose.Schema(
     },
     skills: {
       acrobatics: {
-        proficincy: { type: Boolean, required: true, default: false },
+        proficiency: { type: Boolean, required: true, default: false },
         expertise: { type: Boolean, required: true, default: false },
         misc: { type: Number, required: true, default: 0 },
       },
       animalHandling: {
-        proficincy: { type: Boolean, required: true, default: false },
+        proficiency: { type: Boolean, required: true, default: false },
         expertise: { type: Boolean, required: true, default: false },
         misc: { type: Number, required: true, default: 0 },
       },
       arcana: {
-        proficincy: { type: Boolean, required: true, default: false },
+        proficiency: { type: Boolean, required: true, default: false },
+        expertise: { type: Boolean, required: true, default: false },
+        misc: { type: Number, required: true, default: 0 },
+      },
+      perception: {
+        proficiency: { type: Boolean, required: true, default: false },
         expertise: { type: Boolean, required: true, default: false },
         misc: { type: Number, required: true, default: 0 },
       },
       survival: {
-        proficincy: { type: Boolean, required: true, default: false },
+        proficiency: { type: Boolean, required: true, default: false },
         expertise: { type: Boolean, required: true, default: false },
         misc: { type: Number, required: true, default: 0 },
       },
     },
+    languagesAndOtherProficiencies: {type: String, required: true, default: "Common"},
     armorClass: {
       baseArmor: { type: Number, required: true, default: 10 },
       shieldBonus: { type: Number, required: true, default: 0 },

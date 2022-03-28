@@ -2,7 +2,7 @@ const router = require("express").Router()
 const User = require("../models/user")
 const bcrypt = require("bcrypt")
 
-//GET all users to test sign up and log in
+//GET
 router.get("/", (req, res) => {
   User.find({}, (err, posts) => {
     if (err) {
@@ -14,10 +14,32 @@ router.get("/", (req, res) => {
 
 // Register
 router.post("/register", async (req, res) => {
-
-  return "Look at Terminal"
+  console.log("Registering")
+  try {
+    if (req.body.password === req.body.verifyPassword) {
+      const userExists = await User.findOne({ username: req.body.username })
+      const emailTaken = await User.findOne({ email: req.body.email })
+      if (userExists || emailTaken) {
+        res.send("User Already Exists or Email is Taken")
+      } else {
+        const salt = await bcrypt.genSalt(10)
+        const hashedPassword = await bcrypt.hash(req.body.password, salt)
+        const newUser = await new User({
+          username: req.body.username,
+          email: req.body.email,
+          password: hashedPassword,
+          verifyPassword: hashedPassword,
+        })
+        const user = await newUser.save()
+        res.status(200).json(user)
+      }
+    } else {
+      res.send("Password must match")
+    }
+  } catch (err) {
+    res.status(500).json(err)
+  }
 })
-
 
 //LOGIN
 router.post("/login", async (req, res) => {
@@ -31,6 +53,7 @@ router.post("/login", async (req, res) => {
     res.status(500).json(err)
   }
 })
+
 
 //GET A USER
 router.get("/:id", async (req, res) => {

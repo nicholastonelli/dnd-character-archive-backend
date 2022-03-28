@@ -4,13 +4,14 @@ const express = require("express")
 const app = express()
 const methodOverride = require("method-override")
 const cors = require("cors")
-const session = require('express-session')
-
+const session = require("express-session")
 
 const characterController = require("./controllers/characters")
-
+const authController = require("./controllers/auth")
 const userController = require("./controllers/user")
 
+app.use(express.json())
+app.use(express.urlencoded({ extended: false }))
 app.use(
   cors({
     origin: process.env.FRONTEND_URL,
@@ -18,18 +19,17 @@ app.use(
     credentials: true,
   })
 )
-
 app.use(
   session({
     secret: process.env.SECRET,
-    resave: false, 
-    saveUninitialized: false
+    resave: false,
+    saveUninitialized: false,
   })
 )
 
 app.use("/characters", characterController)
-
 app.use("/users", userController)
+app.use("/auth", authController)
 
 app.set("port", process.env.PORT || 2000)
 
