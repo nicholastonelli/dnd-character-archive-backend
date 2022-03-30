@@ -1,23 +1,23 @@
 const express = require("express")
-const { findById } = require("../models/characters")
+const { findById } = require("../models/baseCharacters")
 const router = express.Router()
-const Characters = require("../models/characters")
+const BaseCharacters = require("../models/baseCharacters")
 const Users = require("../models/user")
 
 //Index Route
 router.get("/", (req, res) => {
-  Characters.find({}).populate('user') 
-  .exec((err,characters) => {
+  BaseCharacters.find({}).populate('user') 
+  .exec((err,baseCharacters) => {
     if (err) {
       res.status(400).json({ err: err.message })
     }
-    res.status(200).json(characters)
+    res.status(200).json(baseCharacters)
   })
 })
 
 //Create/Character Route
 router.post("/", (req, res) => {
-  Characters.create(req.body, (err, p) => {
+  BaseCharacters.create(req.body, (err, p) => {
     if (err) {
       res.status(500).json(err)
       return
@@ -34,27 +34,27 @@ router.post("/", (req, res) => {
 
 //Show Route
 router.get("/:id", (req, res) => {
-  Characters.findById(req.params.id, (error, characters) => {
+  BaseCharacters.findById(req.params.id, (error, baseCharacters) => {
     if (error) {
       res.status(400).json({ error: error.message })
     }
 
-    res.status(200).json(characters)
+    res.status(200).json(baseCharacters)
   })
 })
 
 //Delete Route
 router.delete("/:id", async (req, res) => {
   try {
-    const character = await Characters.findByIdAndDelete(req.params.id)
+    const character = await BaseCharacters.findByIdAndDelete(req.params.id)
     
     if (character) {
-      Characters.find({}).populate('user') 
-      .exec((err,allCharacters)  => {
-        res.status(200).json(allCharacters)
+      BaseCharacters.find({}).populate('user') 
+      .exec((err,allBaseCharacters)  => {
+        res.status(200).json(allBaseCharacters)
       })
     } else {
-      res.status(403).json("You can only delete your characters")
+      res.status(403).json("You can only delete your baseCharacters")
     }
   } catch (err) {
     res.status(500).json(err)
@@ -63,13 +63,13 @@ router.delete("/:id", async (req, res) => {
 
 //Update Route
 router.put('/:id', (req,res) => {
-  Characters.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, allCharacter) => {
+  BaseCharacters.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, allCharacter) => {
       if(err){
           res.status(400).json({err: err.message})
       }
-      Characters.find({}).populate('user') 
-      .exec((err,allCharacters)  => {
-          res.status(200).json(allCharacters)
+      BaseCharacters.find({}).populate('user') 
+      .exec((err,allBaseCharacters)  => {
+          res.status(200).json(allBaseCharacters)
       })
       
   })
@@ -78,7 +78,7 @@ router.put('/:id', (req,res) => {
 // like/dislike a character
 router.put("/:id/like", async (req, res) => {
   try {
-    const character = await Characters.findById(req.params.id)
+    const character = await BaseCharacters.findById(req.params.id)
     console.log(character)
     if (character.userId !== req.body.userId) {
       // let savedCharacter = await character.updateOne({ $push: { likes: req.body.userId }},{new: true},(err, doc)=> {
@@ -99,7 +99,7 @@ router.put("/:id/like", async (req, res) => {
 
 router.get("/:id", async (req, res) => {
   try {
-    const character = await Characters.findById(req.params.id)
+    const character = await BaseCharacters.findById(req.params.id)
     res.status(200).json(character)
   } catch (err) {
     res.status(500).json(err)
@@ -113,25 +113,25 @@ router.get("/timeline/:userId", async (req, res) => {
 
   try {
     const currentUser = await Users.findById(req.body.userId)
-    const userCharacters = await Characters.find({ userId: currentUser._id })
-    const friendCharacters = await Promise.all(
+    const userBaseCharacters = await BaseCharacters.find({ userId: currentUser._id })
+    const friendBaseCharacters = await Promise.all(
       currentUser.followings.map((friendId) => {
-        Characters.find({ userId: friendId })
+        BaseCharacters.find({ userId: friendId })
       })
     )
-    res.json(userCharacters.concat(...friendCharacters))
+    res.json(userBaseCharacters.concat(...friendBaseCharacters))
   } catch (err) {
     res.status(500).json(err)
   }
 })
 
-//Get all of one user's characters
+//Get all of one user's baseCharacters
 router.get("/user/:userId", async (req, res) => {
   try {
     const user = await Users.findById(req.params.userId );
     console.log(req.params)
-    const characters = await Characters.find({user:req.params.userId});
-    res.status(200).json(characters)
+    const baseCharacters = await BaseCharacters.find({user:req.params.userId});
+    res.status(200).json(baseCharacters)
   } catch (err) {
     res.status(500).json(err)
   }

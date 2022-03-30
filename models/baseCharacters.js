@@ -1,6 +1,6 @@
 const mongoose = require("../db/connection")
 
-const characterSchema = new mongoose.Schema(
+const baseCharacterSchema = new mongoose.Schema(
   {
     // Page 1
     name: { type: String, required: true, default: "" },
@@ -166,9 +166,6 @@ const characterSchema = new mongoose.Schema(
     // Additional Details
 
     relativePower: {type: Number, default: 0},
-    //userId: {      type: String,
-    //required: true,
-    //},
     user: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
@@ -177,6 +174,6 @@ const characterSchema = new mongoose.Schema(
   { timestamps: true }
 )
 
-const Character = mongoose.model("Character", characterSchema)
+const BaseCharacter = mongoose.model("BaseCharacter", baseCharacterSchema)
 
-module.exports = Character
+module.exports = BaseCharacter

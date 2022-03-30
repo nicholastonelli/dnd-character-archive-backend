@@ -7,6 +7,7 @@ const cors = require("cors")
 const session = require("express-session")
 
 const characterController = require("./controllers/characters")
+const baseCharacterController = require("./controllers/baseCharacters")
 const authController = require("./controllers/auth")
 const userController = require("./controllers/user")
 
@@ -28,6 +29,7 @@ app.use(
 )
 
 app.use("/characters", characterController)
+app.use("/baseCharacters", baseCharacterController)
 app.use("/users", userController)
 app.use("/auth", authController)
 
