@@ -166,9 +166,7 @@ const characterSchema = new mongoose.Schema(
     // Additional Details
 
     relativePower: {type: Number, default: 0},
-    //userId: {      type: String,
-    //required: true,
-    //},
+    image: {type: String},
     user: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",

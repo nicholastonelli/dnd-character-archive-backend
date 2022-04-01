@@ -106,35 +106,4 @@ router.get("/:id", async (req, res) => {
   }
 })
 
-//character
-
-router.get("/timeline/:userId", async (req, res) => {
-  let characterArray = [];
-
-  try {
-    const currentUser = await Users.findById(req.body.userId)
-    const userBaseCharacters = await BaseCharacters.find({ userId: currentUser._id })
-    const friendBaseCharacters = await Promise.all(
-      currentUser.followings.map((friendId) => {
-        BaseCharacters.find({ userId: friendId })
-      })
-    )
-    res.json(userBaseCharacters.concat(...friendBaseCharacters))
-  } catch (err) {
-    res.status(500).json(err)
-  }
-})
-
-//Get all of one user's baseCharacters
-router.get("/user/:userId", async (req, res) => {
-  try {
-    const user = await Users.findById(req.params.userId );
-    console.log(req.params)
-    const baseCharacters = await BaseCharacters.find({user:req.params.userId});
-    res.status(200).json(baseCharacters)
-  } catch (err) {
-    res.status(500).json(err)
-  }
-})
-
 module.exports = router
