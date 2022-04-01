@@ -44,7 +44,72 @@ const baseCharacterSchema = new mongoose.Schema(
         expertise: { type: Boolean, required: true, default: false },
         misc: { type: Number, required: true, default: 0 },
       },
+      athletics: {
+        proficiency: { type: Boolean, required: true, default: false },
+        expertise: { type: Boolean, required: true, default: false },
+        misc: { type: Number, required: true, default: 0 },
+      },
+      deception: {
+        proficiency: { type: Boolean, required: true, default: false },
+        expertise: { type: Boolean, required: true, default: false },
+        misc: { type: Number, required: true, default: 0 },
+      },
+      history: {
+        proficiency: { type: Boolean, required: true, default: false },
+        expertise: { type: Boolean, required: true, default: false },
+        misc: { type: Number, required: true, default: 0 },
+      },
+      insight: {
+        proficiency: { type: Boolean, required: true, default: false },
+        expertise: { type: Boolean, required: true, default: false },
+        misc: { type: Number, required: true, default: 0 },
+      },
+      intimidation: {
+        proficiency: { type: Boolean, required: true, default: false },
+        expertise: { type: Boolean, required: true, default: false },
+        misc: { type: Number, required: true, default: 0 },
+      },
+      investigation: {
+        proficiency: { type: Boolean, required: true, default: false },
+        expertise: { type: Boolean, required: true, default: false },
+        misc: { type: Number, required: true, default: 0 },
+      },
+      medicine: {
+        proficiency: { type: Boolean, required: true, default: false },
+        expertise: { type: Boolean, required: true, default: false },
+        misc: { type: Number, required: true, default: 0 },
+      },
+      nature: {
+        proficiency: { type: Boolean, required: true, default: false },
+        expertise: { type: Boolean, required: true, default: false },
+        misc: { type: Number, required: true, default: 0 },
+      },
       perception: {
+        proficiency: { type: Boolean, required: true, default: false },
+        expertise: { type: Boolean, required: true, default: false },
+        misc: { type: Number, required: true, default: 0 },
+      },
+      performance: {
+        proficiency: { type: Boolean, required: true, default: false },
+        expertise: { type: Boolean, required: true, default: false },
+        misc: { type: Number, required: true, default: 0 },
+      },
+      persuasion: {
+        proficiency: { type: Boolean, required: true, default: false },
+        expertise: { type: Boolean, required: true, default: false },
+        misc: { type: Number, required: true, default: 0 },
+      },
+      religion: {
+        proficiency: { type: Boolean, required: true, default: false },
+        expertise: { type: Boolean, required: true, default: false },
+        misc: { type: Number, required: true, default: 0 },
+      },
+      sleightOfHand: {
+        proficiency: { type: Boolean, required: true, default: false },
+        expertise: { type: Boolean, required: true, default: false },
+        misc: { type: Number, required: true, default: 0 },
+      },
+      stealth: {
         proficiency: { type: Boolean, required: true, default: false },
         expertise: { type: Boolean, required: true, default: false },
         misc: { type: Number, required: true, default: 0 },
