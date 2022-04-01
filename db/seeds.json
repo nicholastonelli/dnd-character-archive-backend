@@ -122,5 +122,160 @@
         "characterAppearance": "A short, darkly clad monk looking type, concealing a great array of wepaons",
         "characterBackstory": "An assassin trianed for war."
 
-    }
+    },
+    {
+    "name" : "Nemo Lostman",
+	"class" : "ranger",
+	"subclass" : "hunter",
+	"level" : 2,
+	"background" : "highlander",
+	"race" : "varient human",
+	"alignment" : "ng",
+	"experiencePoints" : 300,
+	"abilities" : {
+		"str" : 18,
+		"dex" : 16,
+		"con" : 12,
+		"int" : 14,
+		"wis" : 12,
+		"cha" : 10
+	},
+	"inspiration" : true,
+	"savingThrows" : {
+		"str" : true,
+		"dex" : true,
+		"con" : false,
+		"int" : false,
+		"wis" : false,
+		"cha" : false
+	},
+	"skills" : {
+		"acrobatics" : {
+			"proficiency" : false,
+			"expertise" : false,
+			"misc" : 0
+		},
+		"animalHandling" : {
+			"proficiency" : false,
+			"expertise" : false,
+			"misc" : 0
+		},
+		"arcana" : {
+			"proficiency" : false,
+			"expertise" : false,
+			"misc" : 0
+		},
+		"perception" : {
+			"proficiency" : false,
+			"expertise" : false,
+			"misc" : 0
+		},
+		"survival" : {
+			"proficiency" : false,
+			"expertise" : false,
+			"misc" : 0
+		}
+	},
+	"languagesAndOtherProficiencies" : "Common",
+	"armorClass" : {
+		"baseArmor" : 10,
+		"shieldBonus" : 0,
+		"miscBonus" : 0
+	},
+	"speed" : 30,
+	"hitDice" : {
+		"die" : 0,
+		"current" : 0
+	},
+	"hitPoints" : {
+		"max" : 0,
+		"current" : 0,
+		"temp" : 0
+	},
+	"deathSaves" : {
+		"successes" : 0,
+		"failures" : 0
+	},
+	"equipment" : {
+		"currency" : {
+			"platinum" : 0,
+			"gold" : 0,
+			"electrum" : 0,
+			"silver" : 0,
+			"copper" : 0
+		}
+	},
+	"personality" : {
+		"traits" : " ",
+		"ideals" : " ",
+		"bonds" : " ",
+		"flaws" : " "
+	},
+	"characteristics" : {
+		"age" : 0,
+		"height" : "0",
+		"weight" : 0,
+		"eyes" : " ",
+		"skin" : " ",
+		"hair" : " "
+	},
+	"characterAppearance" : " ",
+	"characterBackstory" : " ",
+	"alliesAndOrgs" : " ",
+	"treasure" : " ",
+	"spellcasting" : {
+		"levelZero" : {
+			"slotsTotal" : 0,
+			"slotsExpended" : 0,
+			"spellsKnown" : [ ]
+		},
+		"levelOne" : {
+			"slotsTotal" : 0,
+			"slotsExpended" : 0,
+			"spellsKnown" : [ ]
+		},
+		"levelTwo" : {
+			"slotsTotal" : 0,
+			"slotsExpended" : 0,
+			"spellsKnown" : [ ]
+		},
+		"levelThree" : {
+			"slotsTotal" : 0,
+			"slotsExpended" : 0,
+			"spellsKnown" : [ ]
+		},
+		"levelFour" : {
+			"slotsTotal" : 0,
+			"slotsExpended" : 0,
+			"spellsKnown" : [ ]
+		},
+		"levelFive" : {
+			"slotsTotal" : 0,
+			"slotsExpended" : 0,
+			"spellsKnown" : [ ]
+		},
+		"levelSix" : {
+			"slotsTotal" : 0,
+			"slotsExpended" : 0,
+			"spellsKnown" : [ ]
+		},
+		"levelSeven" : {
+			"slotsTotal" : 0,
+			"slotsExpended" : 0,
+			"spellsKnown" : [ ]
+		},
+		"levelEight" : {
+			"slotsTotal" : 0,
+			"slotsExpended" : 0,
+			"spellsKnown" : [ ]
+		},
+		"levelNine" : {
+			"slotsTotal" : 0,
+			"slotsExpended" : 0,
+			"spellsKnown" : [ ]
+		}
+	},
+	"relativePower" : 0,
+	"image" : "https://res.cloudinary.com/dllpboqnm/image/upload/v1648828071/jygkutxhmstsrkznfagu.png"
+}
 ]
