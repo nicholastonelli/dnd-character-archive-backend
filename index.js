@@ -28,6 +28,7 @@ app.use(
   })
 )
 
+
 app.use("/characters", characterController)
 app.use("/baseCharacters", baseCharacterController)
 app.use("/users", userController)
