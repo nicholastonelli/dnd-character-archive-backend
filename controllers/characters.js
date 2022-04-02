@@ -75,27 +75,6 @@ router.put('/:id', (req,res) => {
   })
 })
 
-// like/dislike a character
-router.put("/:id/like", async (req, res) => {
-  try {
-    const character = await Characters.findById(req.params.id)
-    console.log(character)
-    if (character.userId !== req.body.userId) {
-      // let savedCharacter = await character.updateOne({ $push: { likes: req.body.userId }},{new: true},(err, doc)=> {
-      //
-      // })
-      character.likes[0] += 1
-      //number of likes vs. array of user id's
-      // character.likes.push(req.body.userId)
-      let update = await character.save()
-      res.status(200).json(update)
-    } else {
-      res.status(200).json("You cannot like your own character")
-    }
-  } catch (err) {
-    res.status(500).json(err)
-  }
-})
 
 router.get("/:id", async (req, res) => {
   try {
