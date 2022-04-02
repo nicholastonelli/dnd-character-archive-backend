@@ -157,9 +157,7 @@ const characterSchema = new mongoose.Schema(
       bonds: { type: String, required: true, default: " " },
       flaws: { type: String, required: true, default: " " }
     },
-    featuresAndTraits:{
-
-    },
+    featuresAndTraits:{ type: String, required: true, default: " " },
 
     // Page 2
     characteristics: {
